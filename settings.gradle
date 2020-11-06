@@ -1,0 +1,3 @@
+include ':balononboarding'
+include ':sample'
+rootProject.name = "BalonOnboarding"
