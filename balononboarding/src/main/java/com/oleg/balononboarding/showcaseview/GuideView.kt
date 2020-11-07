@@ -196,13 +196,16 @@ class GuideView private constructor(context: Context, view: View?) : FrameLayout
         }
 
         //set message view bottom
-        if (targetRect.top + indicatorHeight > height / 2) {
-            isTop = false
-            yMessageView = (targetRect.top - mMessageView.height - indicatorHeight).toInt()
-        } else {
-            isTop = true
-            yMessageView = (targetRect.top + target!!.height + indicatorHeight).toInt()
-        }
+//        if (targetRect.top + indicatorHeight > height / 2) {
+//            isTop = false
+//            yMessageView = (targetRect.top - mMessageView.height - indicatorHeight).toInt()
+//        } else {
+//            isTop = true
+//            yMessageView = (targetRect.top + target!!.height + indicatorHeight).toInt()
+//        }
+
+        yMessageView = (targetRect.top - mMessageView.height - indicatorHeight).toInt()
+
         if (yMessageView < 0) {
             yMessageView = 0
         }
@@ -756,13 +759,9 @@ class GuideView private constructor(context: Context, view: View?) : FrameLayout
                     (locationTarget[1] + target.height).toFloat()
                 )
                 selfRect[paddingLeft, paddingTop, width - paddingRight] = height - paddingBottom
-//                marginGuide = (if (isTop) marginGuide else -marginGuide)
-
-//                startYLineAndCircle =
-//                    (if (isTop) targetRect.bottom else targetRect.top) + marginGuide
-
-                startYLineAndCircle = targetRect.bottom
-
+                marginGuide = (if (isTop) marginGuide else -marginGuide)
+                startYLineAndCircle =
+                    (if (isTop) targetRect.bottom else targetRect.top) + marginGuide
                 stopY = yMessageView + indicatorHeight
                 viewTreeObserver.addOnGlobalLayoutListener(this)
             }

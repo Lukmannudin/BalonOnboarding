@@ -17,8 +17,8 @@ class MainActivity : AppCompatActivity() {
         val tvHello = findViewById<TextView>(R.id.hello)
 
         GuideView.Builder(this)
-            .setTitle("Title")
-            .setContentText("Welcome abroad to BalonOnboarding")
+            .setTitle("Found wrong product detail?")
+            .setContentText("Report difference between in-app and actual product. Your help is greatly appreciated!")
             .setDismissType(DismissType.button)
             .setViewAlign(AlignType.center)
             .setTitleGravity(Gravity.START)
