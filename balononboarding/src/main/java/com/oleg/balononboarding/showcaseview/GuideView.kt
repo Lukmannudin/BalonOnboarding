@@ -756,9 +756,13 @@ class GuideView private constructor(context: Context, view: View?) : FrameLayout
                     (locationTarget[1] + target.height).toFloat()
                 )
                 selfRect[paddingLeft, paddingTop, width - paddingRight] = height - paddingBottom
-                marginGuide = (if (isTop) marginGuide else -marginGuide)
-                startYLineAndCircle =
-                    (if (isTop) targetRect.bottom else targetRect.top) + marginGuide
+//                marginGuide = (if (isTop) marginGuide else -marginGuide)
+
+//                startYLineAndCircle =
+//                    (if (isTop) targetRect.bottom else targetRect.top) + marginGuide
+
+                startYLineAndCircle = targetRect.bottom
+
                 stopY = yMessageView + indicatorHeight
                 viewTreeObserver.addOnGlobalLayoutListener(this)
             }
